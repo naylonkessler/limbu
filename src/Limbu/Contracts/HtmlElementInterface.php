@@ -5,7 +5,7 @@ namespace Limbu\Contracts;
 /**
  * HtmlElement contract.
  */
-interface HtmlElement
+interface HtmlElementInterface
 {
     /**
      * Set or get the element attributes.
@@ -13,7 +13,7 @@ interface HtmlElement
      * @param  mixed  $attributes  An attribute name or array of attributes
      * @param  mixed  $value  An optional value of attribute if first param is
      * a name
-     * @return array|\Limbu\Contracts\HtmlElement
+     * @return array|\Limbu\Contracts\HtmlElementInterface
      */
     public function attributes($attributes = null, $value = null);
 

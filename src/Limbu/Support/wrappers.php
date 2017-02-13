@@ -1,5 +1,7 @@
 <?php
 
+namespace Limbu;
+
 /**
  * Limbu wrapper functions
  */

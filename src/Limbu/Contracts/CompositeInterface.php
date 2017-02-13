@@ -5,13 +5,13 @@ namespace Limbu\Contracts;
 /**
  * Composite contract.
  */
-interface Composite
+interface CompositeInterface
 {
     /**
      * Add an element to children collection.
      *
      * @param  mixed  $element
-     * @return \Limbu\Contracts\Composite
+     * @return \Limbu\Contracts\CompositeInterface
      */
     public function add($element);
 }

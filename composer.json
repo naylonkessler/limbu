@@ -16,6 +16,7 @@
     ],
     "minimum-stability": "dev",
     "autoload": {
+        "files": ["src/Limbu/Support/wrappers.php"],
         "psr-4": {
             "Limbu\\": "src/Limbu/"
         }

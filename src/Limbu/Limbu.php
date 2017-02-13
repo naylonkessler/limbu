@@ -10,20 +10,6 @@ use Limbu\Elements\Tag;
 class Limbu
 {
     /**
-     * Load wrappers (helpers) to global scope.
-     *
-     * @return true
-     */
-    public function loadWrappers()
-    {
-        include_once __DIR__.
-                DIRECTORY_SEPARATOR.'Support'.
-                DIRECTORY_SEPARATOR.'wrappers.php';
-
-        return true;
-    }
-
-    /**
      * Create and return a HtmlElement object.
      *
      * @param  string  $name

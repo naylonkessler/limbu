@@ -14,14 +14,6 @@ class LimbuTest extends PHPUnit_Framework_TestCase
     /**
      * @depends testLimbuInstance
      */
-    public function testHelpersLoadingExistence($limbu)
-    {
-        $this->assertTrue(method_exists($limbu, 'loadWrappers'));
-    }
-
-    /**
-     * @depends testLimbuInstance
-     */
     public function testTagMethodExistence($limbu)
     {
         $this->assertTrue(method_exists($limbu, 'tag'));
@@ -30,11 +22,9 @@ class LimbuTest extends PHPUnit_Framework_TestCase
     /**
      * @depends testLimbuInstance
      */
-    public function testHelpersLoading($limbu)
+    public function testWrappersLoading($limbu)
     {
-        $limbu->loadWrappers();
-
-        $this->assertTrue(function_exists('tag'));
+        $this->assertTrue(function_exists('\Limbu\tag'));
     }
 
     /**
@@ -44,6 +34,6 @@ class LimbuTest extends PHPUnit_Framework_TestCase
     {
         $tag = $limbu->tag('div');
 
-        $this->assertInstanceOf(\Limbu\Contracts\HtmlElement::class, $tag);
+        $this->assertInstanceOf(\Limbu\Contracts\HtmlElementInterface::class, $tag);
     }
 }

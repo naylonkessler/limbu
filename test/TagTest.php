@@ -91,7 +91,7 @@ class TagTest extends PHPUnit_Framework_TestCase
     {
         $div = new \Limbu\Elements\Tag('div');
 
-        $this->assertInstanceOf(\Limbu\Contracts\Composite::class, $div);
+        $this->assertInstanceOf(\Limbu\Contracts\CompositeInterface::class, $div);
     }
 
     public function testTagAddMethod()

@@ -2,15 +2,15 @@
 
 namespace Limbu\Elements;
 
-use Limbu\Contracts\Composite;
-use Limbu\Contracts\HtmlElement;
+use Limbu\Contracts\CompositeInterface;
+use Limbu\Contracts\HtmlElementInterface;
 use Limbu\Exceptions\InvalidComposite as InvalidCompositeException;
 use Limbu\Limbu;
 
 /**
  * Base class of all html elements.
  */
-class Tag implements HtmlElement, Composite
+class Tag implements HtmlElementInterface, CompositeInterface
 {
     /**
      * Collection of attributes.
