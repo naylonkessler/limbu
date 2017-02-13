@@ -10,15 +10,15 @@ use Limbu\Elements\Tag;
 class Limbu
 {
     /**
-     * Load helpers to global scope.
+     * Load wrappers (helpers) to global scope.
      *
      * @return true
      */
-    public function loadHelpers()
+    public function loadWrappers()
     {
         include_once __DIR__.
                 DIRECTORY_SEPARATOR.'Support'.
-                DIRECTORY_SEPARATOR.'helpers.php';
+                DIRECTORY_SEPARATOR.'wrappers.php';
 
         return true;
     }

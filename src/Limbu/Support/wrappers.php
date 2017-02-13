@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Limbu helper functions
+ * Limbu wrapper functions
  */
 
 /**
- * Limbu helper function to generate tags.
+ * Limbu wrapper function to generate tags.
  *
  * @param  string  $name
  * @param  mixed  $content
@@ -17,7 +17,7 @@ function tag($name = 'div', $content = null, array $attributes = []) {
 }
 
 /**
- * Limbu helper function to generate anchors.
+ * Limbu wrapper function to generate anchors.
  *
  * @param  mixed  $content
  * @param  array  $attributes
@@ -28,7 +28,7 @@ function a($content = null, array $attributes = []) {
 }
 
 /**
- * Limbu helper function to generate forms.
+ * Limbu wrapper function to generate forms.
  *
  * @param  mixed  $content
  * @param  array  $attributes
@@ -39,7 +39,7 @@ function form($content = null, array $attributes = []) {
 }
 
 /**
- * Limbu helper function to generate images.
+ * Limbu wrapper function to generate images.
  *
  * @param  array  $attributes
  * @return \Limbu\Contracts\HtmlElement

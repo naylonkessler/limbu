@@ -4,7 +4,7 @@ class HelpersTest extends PHPUnit_Framework_TestCase
 {
     public static function setUpBeforeClass()
     {
-        (new \Limbu\Limbu())->loadHelpers();
+        (new \Limbu\Limbu())->loadWrappers();
     }
 
     public function testTag()

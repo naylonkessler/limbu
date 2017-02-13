@@ -16,7 +16,7 @@ class LimbuTest extends PHPUnit_Framework_TestCase
      */
     public function testHelpersLoadingExistence($limbu)
     {
-        $this->assertTrue(method_exists($limbu, 'loadHelpers'));
+        $this->assertTrue(method_exists($limbu, 'loadWrappers'));
     }
 
     /**
@@ -32,7 +32,7 @@ class LimbuTest extends PHPUnit_Framework_TestCase
      */
     public function testHelpersLoading($limbu)
     {
-        $limbu->loadHelpers();
+        $limbu->loadWrappers();
 
         $this->assertTrue(function_exists('tag'));
     }
