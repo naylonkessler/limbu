@@ -19,7 +19,17 @@ Import and create a tag object:
 ```php
 <?php
 
-use Limbu\Tag;
+use Limbu\Limbu;
+use Limbu\Elements\Img;
+use Limbu\Elements\Tag;
 
-$fragment = new Tag('div');
+// Using the factory
+$factory = new Limbu();
+$div = $factory->tag('div');
+
+// Using the Tag class
+$div = new Tag('div');
+
+// Using a specialized class
+$img = new Img(['src' => 'home-image-url.jpg']);
 ```

@@ -47,8 +47,11 @@ class Tag implements HtmlElementInterface, CompositeInterface
      * @param  mixed  $content
      * @param  array  $attributes
      */
-    public function __construct($name = 'div', $content = null, array $attributes = [])
-    {
+    public function __construct(
+        $name = 'div',
+        $content = null,
+        array $attributes = []
+    ) {
         $this->name = $name;
         $this->attributes($attributes);
         $this->content($content);
@@ -137,6 +140,16 @@ class Tag implements HtmlElementInterface, CompositeInterface
     }
 
     /**
+     * Return the element string.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string) $this->render();
+    }
+
+    /**
      * Render tag attributes.
      *
      * @return string
@@ -153,27 +166,31 @@ class Tag implements HtmlElementInterface, CompositeInterface
     }
 
     /**
+     * Mapper method to render a child element.
+     *
+     * @return string
+     */
+    protected function renderChild($child)
+    {
+        if (is_array($child)) {
+            return call_user_func_array([new Limbu(), 'tag'], $child);
+        }
+
+        if ($child instanceOf self) {
+            return $child->render();
+        }
+
+        return $child;
+    }
+
+    /**
      * Render tag children elements.
      *
      * @return string
      */
     protected function renderChildren()
     {
-        $out = [];
-
-        foreach ($this->content() as $child) {
-            if (is_string($child)) {
-                $out[] = $child;
-            }
-
-            if (is_array($child)) {
-                $out[] = call_user_func_array([new Limbu(), 'tag'], $child);
-            }
-
-            if ($child instanceOf self) {
-                $out[] = $child->render();
-            }
-        }
+        $out = array_map([$this, 'renderChild'], $this->content());
 
         return implode('', $out);
     }
@@ -199,15 +216,5 @@ class Tag implements HtmlElementInterface, CompositeInterface
         $attributes = $attributes? ' '.$attributes : '';
 
         return '<'.$this->name.$attributes.'>';
-    }
-
-    /**
-     * Return the element string.
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return (string) $this->render();
     }
 }
