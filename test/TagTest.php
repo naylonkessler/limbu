@@ -1,6 +1,6 @@
 <?php
 
-include 'mock/EmptyTag.php';
+include 'fake/EmptyTag.php';
 
 class TagTest extends PHPUnit_Framework_TestCase
 {
